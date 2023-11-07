@@ -33,7 +33,8 @@ namespace WindowsFormsApp1
                 tipoTelegrama = 'o';
             }
             //Obtengo el número de palabras que forma el telegrama
-            numPalabras = textoTelegrama.Length;
+            char[] delimitadores = new char[] { ' ', '\r', '\t' };
+            numPalabras = textoTelegrama.Split(delimitadores,StringSplitOptions.RemoveEmptyEntries).Length;
             //Si el telegrama es ordinario
             if (tipoTelegrama == 'o')
                 if (numPalabras <= 10)
