@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
             string textoTelegrama;
             char tipoTelegrama = ' ';
             int numPalabras = 0;
-            double coste;
+            double coste=0;
             //Leo el telegrama
             textoTelegrama = txtTelegrama.Text;
             // telegrama urgente?
@@ -43,8 +43,7 @@ namespace WindowsFormsApp1
                     coste = 5;
                 else
                     coste = 5 + 0.75 * (numPalabras - 10);
-            else
-                coste = 0;
+            
             txtPrecio.Text = coste.ToString() + " euros";
         }
     }
